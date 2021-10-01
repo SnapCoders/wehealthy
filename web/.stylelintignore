@@ -1,0 +1,14 @@
+/src/locales/*
+/src/**/*.tsx
+/src/**/*.jsx
+/src/**/*.d.ts
+Dockerfile
+Dockerfile.*
+docker-compose.yaml
+/*js
+/*ts
+/**/*.json
+/public
+/dist
+/build
+/node_modules
