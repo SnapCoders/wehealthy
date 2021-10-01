@@ -1,0 +1,20 @@
+Integrantes:
+  - RA: 81823855
+  - Nome: Alexandre Vardai Neto
+  - E-mail: alexandreneto.3855@aluno.saojudas.br
+
+  - RA: 818236054
+  - Nome: Amanda Cano Jardim
+  - E-mail: amandajardim.6054@aluno.saojudas.br
+
+  - RA: 81820360
+  - Nome: Bruno Amaral Futema
+  - E-mail: brunofutema.0360@aluno.saojudas.br
+
+  - RA: 81823402
+  - Nome: Douglas Oliveira dos Santos
+  - E-mail: douglassantos.3402@aluno.saojudas.br
+
+  - RA: 81823608
+  - Nome: Jhonatan da Costa
+  - E-mail: jhonatancosta.3608@aluno.saojudas.br
