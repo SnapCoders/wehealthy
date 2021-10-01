@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  api:
+    container_name: wehealthy-prd-api
+    build:
+      context: .
+      dockerfile: Dockerfile.prd
+    tty: true
+    ports:
+      - 1111:1111
+    networks:
+      - wehealthy-prd-network
+
+networks:
+  wehealthy-prd-network:
+    driver: bridge

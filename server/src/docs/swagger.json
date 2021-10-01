@@ -1,0 +1,27 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Documentação da API WeHealthy",
+    "description": "Esta é a API do projeto WeHealthy",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Admin Bro",
+      "url": "http://localhost:3333/admin",
+      "email": "bruno.futema@outlook.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3333",
+      "description": "Servidor de Desenvolvimento"
+    },
+    {
+      "url": "https://api.staging-dev.xperience",
+      "description": "Servidor de Staging"
+    },
+    {
+      "url": "https://api.dev.xperience",
+      "description": "Servidor de Produção"
+    }
+  ]
+}

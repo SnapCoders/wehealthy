@@ -1,0 +1,144 @@
+paths:
+  /users:
+    get:
+      tags:
+        - User
+      summary: Lista todos os usuários.
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Retorna todos os usuários.
+        400:
+          description: Solicitação mal sucedida.
+        401:
+          description: Solicitação não permitida.
+        403:
+          description: Solicitação não autorizada.
+        500:
+          description: Erro interno no servidor.
+
+    post:
+      tags:
+        - User
+      summary: Cria um novo usuário.
+      produces:
+      - application/json
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/User'
+      responses:
+        201:
+          description: Usuário cadastrado com sucesso.
+        400:
+          description: Solicitação mal sucedida.
+        401:
+          description: Solicitação não permitida.
+        403:
+          description: Solicitação não autorizada.
+        406:
+          description: Um usuário com este e-mail/username já existe.
+        500:
+          description: Erro interno no servidor.
+
+  /users/{id}:
+    get:
+      tags:
+        - User
+      summary: Busca um usuário por id.
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: Id numérico do usuário.
+      responses:
+        200:
+          description: Retorna os dados de um usuário.
+        400:
+          description: Solicitação mal sucedida.
+        401:
+          description: Solicitação não permitida.
+        403:
+          description: Solicitação não autorizada.
+        404:
+          description: Usuário não encontrado.
+        500:
+          description: Erro interno no servidor.
+
+    put:
+      tags:
+        - User
+      summary: Atualiza todos os atributos de um usuário.
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: Id numérico do usuário.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/User'
+      responses:
+        200:
+          description: Usuário atualizado com sucesso.
+        400:
+          description: Solicitação mal sucedida.
+        401:
+          description: Solicitação não permitida.
+        403:
+          description: Solicitação não autorizada.
+        404:
+          description: Usuário não encontrado.
+        500:
+          description: Erro interno no servidor.
+
+    delete:
+      tags:
+        - User
+      summary: Exclui um usuário existente.
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: Id numérico do usuário.
+      responses:
+        204:
+          description: Usuário excluído com sucesso.
+        401:
+          description: Solicitação não permitida.
+        403:
+          description: Solicitação não autorizada.
+        404:
+          description: Usuário não encontrado.
+        500:
+          description: Erro interno no servidor.
+
+definitions:
+  User:
+    type: object
+    properties:
+      username:
+        type: string
+      name:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
