@@ -9,18 +9,22 @@
     "dev": "env-cmd -f .env.dev ts-node-dev -r tsconfig-paths/register --respawn --inspect --transpile-only --ignore-watch ./node_modules ./src/shared/infra/http/server.ts",
     "stg": "env-cmd -f .env.stg node ./dist/shared/infra/http/server.js",
     "start": "env-cmd -f .env.prd node ./dist/shared/infra/http/server.js",
+
     "typeorm": "env-cmd -f .env.dev ts-node-dev ./node_modules/typeorm/cli.js",
     "typeorm:stg": "env-cmd .env.stg node ./node_modules/typeorm/cli.js migration:run",
     "typeorm:prd": "env-cmd .env.prd node ./node_modules/typeorm/cli.js migration:run",
-    "docker:dev": "docker-compose up -d",
+
+    "docker:dev": "docker-compose -f docker-compose-dev.yaml up -d",
     "docker:stg": "docker-compose -f docker-compose-stg.yaml up -d",
     "docker:prd": "docker-compose -f docker-compose-prd.yaml up -d",
     "down": "docker-compose down && npm run docker:rmi",
     "docker:rmi": "docker rmi wehealthy-api_api",
+
     "build": "rm -rf ./dist && babel src --extensions \".js,.ts\" --out-dir ./dist --copy-files --no-copy-ignored",
     "test": "env-cmd -f .env.test jest",
     "posttest": "rm -rf tests",
     "lint": "eslint --fix .",
+
     "create:controller": "bash ./src/commands/create_controller.sh",
     "create:crud": "bash ./src/commands/create_crud.sh",
     "create:docs": "bash ./src/commands/create_docs.sh",

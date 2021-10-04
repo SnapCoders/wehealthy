@@ -22,9 +22,7 @@ services:
     restart: always
     tty: true
     ports:
-      - 5432:5432
-    volumes:
-      - ./postgres:/var/lib/postgresql
+      - 5433:5432
     environment:
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
