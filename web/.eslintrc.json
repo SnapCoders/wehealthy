@@ -37,6 +37,8 @@
     "import/extensions": ["error", "ignorePackages", { "ts": "never", "tsx": "never" }],
     "no-use-before-define": "off",
     "react/prop-types": "off",
+    "react/no-unused-prop-types": "off",
+    "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
     "linebreak-style": 0,
     "no-nested-ternary": 0,
