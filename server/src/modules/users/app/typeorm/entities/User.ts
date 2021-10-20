@@ -20,6 +20,12 @@ class User extends BaseEntity {
   @Column({ length: 80 })
   email: string;
 
+  @Column({ length: 6 })
+  crn: string;
+
+  @Column({ length: 20 })
+  phone: string;
+
   @Column()
   @Exclude()
   password_hash: string;

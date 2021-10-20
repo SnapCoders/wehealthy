@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class CreateUsers1630873644226 implements MigrationInterface {
+export class createAppointments1634691090663 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     if (process.env.DB_CONNECTION !== 'sqlite') {
       await queryRunner.query(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`);
@@ -8,7 +8,7 @@ export class CreateUsers1630873644226 implements MigrationInterface {
 
     await queryRunner.createTable(
       new Table({
-        name: 'users',
+        name: 'appointments',
         columns: [
           {
             name: 'id',
@@ -18,34 +18,29 @@ export class CreateUsers1630873644226 implements MigrationInterface {
             generationStrategy: 'uuid',
           },
           {
-            name: 'username',
-            type: 'varchar(20)',
+            name: 'nutritionist_id',
+            type: 'uuid',
             isNullable: false,
           },
           {
-            name: 'name',
+            name: 'user_id',
+            type: 'uuid',
+            isNullable: false,
+          },
+          {
+            name: 'date',
+            type: 'timestamp with time zone',
+            isNullable: false,
+          },
+          {
+            name: 'type',
             type: 'varchar(80)',
             isNullable: false,
           },
           {
-            name: 'email',
-            type: 'varchar(80)',
-            isNullable: false,
-          },
-          {
-            name: 'password_hash',
+            name: 'link',
             type: 'text',
             isNullable: false,
-          },
-          {
-            name: 'crn',
-            type: 'varchar(6)',
-            isNullable: true,
-          },
-          {
-            name: 'phone',
-            type: 'varchar(20)',
-            isNullable: true,
           },
           {
             name: 'created_at',
@@ -69,6 +64,6 @@ export class CreateUsers1630873644226 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('users');
+    await queryRunner.dropTable('appointments');
   }
 }
