@@ -51,6 +51,9 @@
     "react/jsx-one-expression-per-line": "off",
     "import/no-duplicates": "off",
     "no-plusplus": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
     "import/no-extraneous-dependencies": "off",
     "import-helpers/order-imports": [
       "warn",

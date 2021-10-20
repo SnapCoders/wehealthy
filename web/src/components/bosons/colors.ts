@@ -125,6 +125,7 @@ export const colors = {
     },
   },
   white: '#fbfbfb',
+  black: '#232323',
   gray: {
     100: '#f1f1f1',
     200: '#d4d4d4',
