@@ -27,6 +27,8 @@ class CreateUserService {
     name,
     email,
     password,
+    phone,
+    crn,
   }: ICreateUserRequest): Promise<User> {
     const foundedUserByEmail = await this.usersRepository.findByEmail(email);
 
@@ -49,6 +51,8 @@ class CreateUserService {
       name,
       email,
       password_hash,
+      phone,
+      crn,
     });
 
     const file = path.resolve(__dirname, '..', 'views', 'welcome_new_user.hbs');

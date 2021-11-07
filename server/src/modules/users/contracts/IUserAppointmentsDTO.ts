@@ -1,27 +1,25 @@
 import { IModel } from '@shared/contracts/IModel';
 
-import { User } from '../app/typeorm/entities/User';
+import { UsersAppointments } from '../app/typeorm/entities/UsersAppointments';
 
 /**
  * Model: User
  */
-export type IUser = IModel<User>;
+export type IUsersAppointments = IModel<UsersAppointments>;
+
+export interface ICreateUsersAppointments {
+  user_id: string;
+  appointment_id: string;
+}
 
 /**
  * Method: POST
  * Create User
  */
-export interface ICreateUser {
-  username: string;
-  name: string;
-  email: string;
-  password_hash?: string;
-  phone: string;
-  crn: string;
-}
 
-export interface ICreateUserRequest extends Omit<ICreateUser, 'password_hash'> {
-  password: string;
+export interface IAssociateAppointmentsToManyUsers {
+  appointment_id: string;
+  users_ids: string[];
 }
 
 /**
@@ -34,7 +32,7 @@ export type IShowUser = Pick<IUpdateUser, 'id'>;
  * Method: PUT
  * Update User
  */
-export interface IUpdateUser extends ICreateUser {
+export interface IUpdateUser extends IUsersAppointments {
   id: string;
 }
 

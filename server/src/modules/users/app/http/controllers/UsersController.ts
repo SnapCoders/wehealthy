@@ -19,7 +19,7 @@ class UsersController {
 
     Query.paginate(response, { query, total });
 
-    return response.status(200).json(classToClass(users));
+    return response.status(200).json({ data: classToClass(users) });
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
@@ -34,7 +34,7 @@ class UsersController {
       password,
     });
 
-    return response.status(201).json(classToClass(createdUser));
+    return response.status(201).json({ data: classToClass(createdUser) });
   }
 
   public async show(request: Request, response: Response): Promise<Response> {
@@ -44,7 +44,7 @@ class UsersController {
 
     const user = await showUserService.execute({ id: String(id) });
 
-    return response.json(classToClass(user));
+    return response.json({ data: classToClass(user) });
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
@@ -60,7 +60,7 @@ class UsersController {
       email: String(email),
     });
 
-    return response.json(classToClass(user));
+    return response.json({ data: classToClass(user) });
   }
 
   public async delete(request: Request, response: Response): Promise<Response> {
@@ -70,7 +70,7 @@ class UsersController {
 
     await deleteUserService.execute({ id: String(id) });
 
-    return response.status(204).send();
+    return response.status(204).send({});
   }
 }
 
