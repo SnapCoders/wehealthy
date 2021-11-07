@@ -1,33 +1,43 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
-import { Input, Select } from '@components/atoms';
+import { AuthDivisor } from '@components/quarks';
 
-import { Container, Unform } from './styles';
-
-type IFormData = any;
+import {
+  Container,
+  GuestForm,
+  Presentation,
+  PresentationBackground,
+  PresentationContent,
+} from './styles';
 
 const SignIn: React.FC = () => {
-  const handleSubmit = useCallback((formData: IFormData) => {
-    console.log(formData);
-  }, []);
-
   return (
     <Container>
-      <Unform onSubmit={handleSubmit}>
-        <Input label="Label" name="Input" />
+      <Presentation>
+        <PresentationBackground />
 
-        <Input label="Label" name="Input" type="password" />
+        <PresentationContent>
+          <h1>SignIn</h1>
 
-        <Select
-          label="Label"
-          name="Select"
-          options={[
-            { label: 'Opção 1', value: 1 },
-            { label: 'Opção 2', value: 2, selected: true },
-            { label: 'Opção 3', value: 3 },
-          ]}
+          <strong>
+            O esporte e sua dieta são os investimentos mais importantes para a
+            sua saúde.
+          </strong>
+
+          <p>
+            A saúde é algo de que precisamos cuidar. O exercício é uma forma de
+            manter um corpo saudável. O exercício torna a sua vida feliz.
+          </p>
+        </PresentationContent>
+      </Presentation>
+
+      <GuestForm>
+        <AuthDivisor
+          style={{ position: 'absolute', left: 0, marginLeft: '-58%' }}
         />
-      </Unform>
+
+        <h1>Login</h1>
+      </GuestForm>
     </Container>
   );
 };

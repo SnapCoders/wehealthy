@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { colors } from '@components/bosons/colors';
+
 export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
@@ -19,9 +21,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: #1b203c;
+    background: ${colors.background};
 
-    color: #7159c1;
+    color: ${colors.text};
     -webkit-font-smoothing: antialiased;
   }
 
@@ -43,7 +45,7 @@ export const GlobalStyles = createGlobalStyle`
   textarea,
   button {
     font-weight: 400;
-    font-family: Roboto, sans-serif;
+    font-family: ${({ theme }) => theme.typography.fontFamily};
   }
 
   h1,
